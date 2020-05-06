@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import axios from "axios";
+import axios from "./utils/axios";
 
 //import from 'npm install --save material-ui axios react-tap-event-plugin'
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
