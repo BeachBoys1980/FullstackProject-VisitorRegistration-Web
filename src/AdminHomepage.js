@@ -63,6 +63,9 @@ class AdminHomepage extends React.Component {
   showCreateUserForm = () => {
     this.setState({
       isCreateFormDisplayed: true,
+
+      //reset all previous users & forms displayed
+      users: [],
     });
   };
 
@@ -149,6 +152,9 @@ class AdminHomepage extends React.Component {
         console.log(error);
         alert(error);
         alert("Create new user failed");
+      })
+      .finally(() => {
+        this.hideCreateUserForm();
       });
   };
 
@@ -182,21 +188,16 @@ class AdminHomepage extends React.Component {
               primary={true}
               onClick={this.handleGetAllClick}
             />
-
-            {this.renderGetAllUsers()}
-
-            <br />
-            <br />
+            &nbsp; &nbsp;
             <RaisedButton
               label="Create User"
               primary={true}
               onClick={this.showCreateUserForm}
             />
-            <br />
-            <br />
+            &nbsp; &nbsp;
             <RaisedButton label="Logout" onClick={this.handleLogoutClick} />
-
             {this.state.isCreateFormDisplayed && this.renderCreateUserForm()}
+            {this.renderGetAllUsers()}
           </div>
         </MuiThemeProvider>
       </div>

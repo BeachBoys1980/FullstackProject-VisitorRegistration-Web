@@ -55,7 +55,7 @@ class Login extends React.Component {
     return (
       <div>
         <MuiThemeProvider>
-          <div align="center">
+          <div>
             <AppBar title="Login" />
             <TextField
               floatingLabelText="Username"

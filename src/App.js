@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Login from "./Login";
 import AdminHomepage from "./AdminHomepage";
+import UserHomepage from "./UserHomepage";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 class App extends React.Component {
@@ -31,6 +32,18 @@ class App extends React.Component {
               render={() => <AdminHomepage logout={this.logout} />}
             />
             <Redirect to="/adminHomepage" />
+          </Switch>
+        </div>
+      );
+    } else if (this.state.userType === "USER" && this.state.isLogin) {
+      return (
+        <div>
+          <Switch>
+            <Route
+              path="/userHomepage"
+              render={() => <UserHomepage logout={this.logout} />}
+            />
+            <Redirect to="/userHomepage" />
           </Switch>
         </div>
       );
