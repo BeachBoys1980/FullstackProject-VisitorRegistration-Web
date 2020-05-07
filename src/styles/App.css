@@ -25,28 +25,10 @@
   padding: 20px;
 }
 
-.pokeCard {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  width: 250px;
-  border: 2px;
-  border-style: solid;
-  border-color: black;
-  margin: 16px;
-  border-radius: 10px;
-  padding: 20px;
-}
-
 .listItems {
   flex-basis: auto;
   margin: 0px;
   padding: 10px;
   border-color: black;
   text-align: start;
-}
-
-.pokeName {
-  font-weight: bold;
-  font-size: 30px;
 }
