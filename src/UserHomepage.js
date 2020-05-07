@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import axios from "axios";
+import axios from "./utils/axios";
 
 //import from 'npm install --save material-ui axios react-tap-event-plugin'
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
@@ -34,7 +34,7 @@ class UserHomepage extends React.Component {
     const apiGetAllURL = "http://localhost:5000/visits/";
 
     axios
-      .get(apiGetAllURL)
+      .get(apiGetAllURL, { withCredentials: true })
       .then((response) => {
         if (response.status === 200) {
           this.setState({
@@ -177,7 +177,7 @@ class UserHomepage extends React.Component {
       nric: this.state.nric,
       contactNo: this.state.contactNo,
     };
-    console.log(payload);
+
     axios
       .post(apiCreateUserURL, payload)
       .then((response) => {
