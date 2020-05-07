@@ -23,6 +23,10 @@
 
 1. Created Axios common config to pass in {withCredentials: true}
 
+4TH COMMIT: LOGIN, LOGOUT, ADMIN w GET/CREATE, USER w GET/TRACE/REGISTER, AXIOS, CSS
+
+1. Created App.css (w flex)
+
 ===============================================================================
 
 ** Product Backlog **
@@ -31,6 +35,3 @@
 
    - Update user
    - Delete user
-
-2. Misc Features
-   - CSS Style Sheets (flex)

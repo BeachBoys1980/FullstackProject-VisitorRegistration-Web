@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import axios from "./utils/axios";
 
 //import from 'npm install --save material-ui axios react-tap-event-plugin'
@@ -68,8 +68,7 @@ class UserHomepage extends React.Component {
       });
 
       return (
-        <div key={visit._id}>
-          <br />
+        <div className="listItems" key={visit._id}>
           <b>Date: </b>
           {visitDateString} , <b>Time: </b>
           {visitTimeString},
@@ -352,6 +351,7 @@ class UserHomepage extends React.Component {
       if (visit.isTraced === true && visit.isInfected === true) {
         return (
           <div
+            className="listItems"
             key={visit._id}
             style={{
               backgroundColor: "#ff5733",
@@ -359,7 +359,6 @@ class UserHomepage extends React.Component {
               fontSize: "18px",
             }}
           >
-            <br />
             <b>Date: </b>
             {visitDateString} , <b>Time: </b>
             {visitTimeString},
@@ -373,8 +372,11 @@ class UserHomepage extends React.Component {
       //else if it is a traced and not infected visit, set a background color only
       else if (visit.isTraced === true && visit.isInfected === false) {
         return (
-          <div key={visit._id} style={{ backgroundColor: "#ffbd33" }}>
-            <br />
+          <div
+            className="listItems"
+            key={visit._id}
+            style={{ backgroundColor: "#ffbd33" }}
+          >
             <b>Date: </b>
             {visitDateString} , <b>Time: </b>
             {visitTimeString},
@@ -388,8 +390,7 @@ class UserHomepage extends React.Component {
       //if visit is untraced
       else {
         return (
-          <div key={visit._id}>
-            <br />
+          <div className="listItems" key={visit._id}>
             <b>Date: </b>
             {visitDateString} , <b>Time: </b>
             {visitTimeString},
@@ -423,7 +424,7 @@ class UserHomepage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="userpageGrid">
         <MuiThemeProvider>
           <div>
             <AppBar title="User Homepage" />
@@ -433,31 +434,29 @@ class UserHomepage extends React.Component {
               primary={true}
               onClick={this.handleGetAllClick}
             />
-            &nbsp;&nbsp;
+
             <RaisedButton
               label="Contact Trace Visit"
               primary={true}
               onClick={this.showContactTraceForm}
             />
-            &nbsp;&nbsp;
+
             <RaisedButton
               label="Register Visit"
               primary={true}
               onClick={this.showRegisterVisitForm}
             />
-            &nbsp;&nbsp;
+
             <RaisedButton label="Logout" onClick={this.handleLogoutClick} />
-            <br />
             {this.state.isRegisterFormDisplayed &&
               this.renderRegisterVisitForm()}
-            <br />
+
             {this.state.isContactTraceFormDisplayed &&
               this.renderContactTraceForm()}
-            <br />
+
             {this.renderGetAllVisits()}
+
             {this.renderGetAllVisitsWithTrace()}
-            <br />
-            <br />
           </div>
         </MuiThemeProvider>
       </div>

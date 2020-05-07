@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import Login from "./Login";
 import AdminHomepage from "./AdminHomepage";
 import UserHomepage from "./UserHomepage";

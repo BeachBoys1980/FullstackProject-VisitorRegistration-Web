@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import axios from "./utils/axios";
 
 //import from 'npm install --save material-ui axios react-tap-event-plugin'
@@ -53,10 +53,10 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="loginpageGrid">
         <MuiThemeProvider>
           <div>
-            <AppBar title="Login" />
+            <AppBar title="VISITOR REGISTRATION SYSTEM (LOGIN)" />
             <TextField
               floatingLabelText="Username"
               onChange={this.handleUsernameChange}

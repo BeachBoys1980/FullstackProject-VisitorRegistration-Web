@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./styles/App.css";
 import axios from "./utils/axios";
 
 //import from 'npm install --save material-ui axios react-tap-event-plugin'
@@ -54,8 +54,10 @@ class AdminHomepage extends React.Component {
 
   renderGetAllUsers = () => {
     return this.state.users.map((user) => (
-      <div key={user.username}>
-        User Name: {user.username}, User Type: {user.userType}
+      <div className="listItems" key={user.username}>
+        <b>Username: </b>
+        {user.username}, <b>User Type: </b>
+        {user.userType}
       </div>
     ));
   };
@@ -178,7 +180,7 @@ class AdminHomepage extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="adminpageGrid">
         <MuiThemeProvider>
           <div>
             <AppBar title="Admin Homepage" />
@@ -188,13 +190,13 @@ class AdminHomepage extends React.Component {
               primary={true}
               onClick={this.handleGetAllClick}
             />
-            &nbsp; &nbsp;
+
             <RaisedButton
               label="Create User"
               primary={true}
               onClick={this.showCreateUserForm}
             />
-            &nbsp; &nbsp;
+
             <RaisedButton label="Logout" onClick={this.handleLogoutClick} />
             {this.state.isCreateFormDisplayed && this.renderCreateUserForm()}
             {this.renderGetAllUsers()}
