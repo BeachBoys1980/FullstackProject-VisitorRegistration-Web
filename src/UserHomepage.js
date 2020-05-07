@@ -284,8 +284,6 @@ class UserHomepage extends React.Component {
       "/trace" +
       contactTraceDateURL;
 
-    console.log(apiContactTraceURL);
-
     axios
       .get(apiContactTraceURL)
       .then((response) => {
@@ -410,7 +408,6 @@ class UserHomepage extends React.Component {
     axios
       .post(apiLogoutURL)
       .then((response) => {
-        console.log(response.data + " " + response.status);
         if (response.status === 200) {
           alert("You are successfully logged out.");
           this.props.logout();

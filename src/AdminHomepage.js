@@ -142,7 +142,7 @@ class AdminHomepage extends React.Component {
       password: this.state.password,
       userType: this.state.userType,
     };
-    console.log(payload);
+
     axios
       .post(apiCreateUserURL, payload)
       .then((response) => {
@@ -166,7 +166,6 @@ class AdminHomepage extends React.Component {
     axios
       .post(apiLogoutURL)
       .then((response) => {
-        console.log(response.data + " " + response.status);
         if (response.status === 200) {
           alert("You are successfully logged out.");
           this.props.logout();
