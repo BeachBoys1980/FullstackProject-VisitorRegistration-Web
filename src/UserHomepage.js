@@ -35,7 +35,7 @@ class UserHomepage extends React.Component {
     const apiGetAllURL = "/visits/";
 
     axios
-      .get(apiGetAllURL, { withCredentials: true })
+      .get(apiGetAllURL)
       .then((response) => {
         if (response.status === 200) {
           this.setState({
