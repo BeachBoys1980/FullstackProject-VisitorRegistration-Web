@@ -39,7 +39,7 @@ class Login extends React.Component {
     };
 
     axios
-      .post(apiLoginURL, payload, { withCredentials: true })
+      .post(apiLoginURL, payload)
       .then((response) => {
         if (response.status === 200) {
           this.props.login(true, response.data.userType);
