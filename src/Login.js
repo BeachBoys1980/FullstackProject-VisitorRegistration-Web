@@ -53,15 +53,17 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="loginpageGrid">
+      <div className="loginpageLayout">
         <MuiThemeProvider>
           <div>
-            <AppBar title="VISITOR REGISTRATION SYSTEM (LOGIN)" />
+            <AppBar title="VISITOR REGISTRATION SYSTEM" />
+
             <TextField
               floatingLabelText="Username"
               onChange={this.handleUsernameChange}
             />
             <br />
+
             <TextField
               type="password"
               floatingLabelText="Password"

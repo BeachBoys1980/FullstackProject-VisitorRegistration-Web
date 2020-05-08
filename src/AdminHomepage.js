@@ -5,6 +5,7 @@ import axios from "./utils/axios";
 //import from 'npm install --save material-ui axios react-tap-event-plugin'
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
+import FlatButton from "material-ui/FlatButton";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import { RadioButton, RadioButtonGroup } from "material-ui/RadioButton";
@@ -179,24 +180,28 @@ class AdminHomepage extends React.Component {
 
   render() {
     return (
-      <div className="adminpageGrid">
+      <div className="adminpageLayout">
         <MuiThemeProvider>
           <div>
-            <AppBar title="Admin Homepage" />
+            <AppBar
+              title="Admin Homepage"
+              iconElementRight={
+                <FlatButton label="Logout" onClick={this.handleLogoutClick} />
+              }
+            />
             <br />
-            <RaisedButton
-              label="Get All Users"
-              primary={true}
-              onClick={this.handleGetAllClick}
-            />
-
-            <RaisedButton
-              label="Create User"
-              primary={true}
-              onClick={this.showCreateUserForm}
-            />
-
-            <RaisedButton label="Logout" onClick={this.handleLogoutClick} />
+            <div className="menuLayout">
+              <RaisedButton
+                label="Get All Users"
+                primary={true}
+                onClick={this.handleGetAllClick}
+              />
+              <RaisedButton
+                label="Create User"
+                primary={true}
+                onClick={this.showCreateUserForm}
+              />
+            </div>
             {this.state.isCreateFormDisplayed && this.renderCreateUserForm()}
             {this.renderGetAllUsers()}
           </div>

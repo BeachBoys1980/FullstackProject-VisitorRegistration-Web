@@ -5,6 +5,7 @@ import axios from "./utils/axios";
 //import from 'npm install --save material-ui axios react-tap-event-plugin'
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import AppBar from "material-ui/AppBar";
+import FlatButton from "material-ui/FlatButton";
 import RaisedButton from "material-ui/RaisedButton";
 import TextField from "material-ui/TextField";
 import DatePicker from "material-ui/DatePicker";
@@ -321,7 +322,6 @@ class UserHomepage extends React.Component {
       })
       .catch((error) => {
         console.log(error);
-        alert(error);
         alert("Contact trace failed");
       })
       .finally(() => {
@@ -421,30 +421,36 @@ class UserHomepage extends React.Component {
 
   render() {
     return (
-      <div className="userpageGrid">
+      <div className="userpageLayout">
         <MuiThemeProvider>
           <div>
-            <AppBar title="User Homepage" />
-            <br />
-            <RaisedButton
-              label="Get All Visits"
-              primary={true}
-              onClick={this.handleGetAllClick}
+            <AppBar
+              title="User Homepage"
+              iconElementRight={
+                <FlatButton label="Logout" onClick={this.handleLogoutClick} />
+              }
             />
 
-            <RaisedButton
-              label="Contact Trace Visit"
-              primary={true}
-              onClick={this.showContactTraceForm}
-            />
+            <div className="menuLayout">
+              <RaisedButton
+                label="Get All Visits"
+                primary={true}
+                onClick={this.handleGetAllClick}
+              />
 
-            <RaisedButton
-              label="Register Visit"
-              primary={true}
-              onClick={this.showRegisterVisitForm}
-            />
+              <RaisedButton
+                label="Contact Trace Visit"
+                primary={true}
+                onClick={this.showContactTraceForm}
+              />
 
-            <RaisedButton label="Logout" onClick={this.handleLogoutClick} />
+              <RaisedButton
+                label="Register Visit"
+                primary={true}
+                onClick={this.showRegisterVisitForm}
+              />
+            </div>
+
             {this.state.isRegisterFormDisplayed &&
               this.renderRegisterVisitForm()}
 

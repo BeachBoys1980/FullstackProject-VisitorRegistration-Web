@@ -1,13 +1,18 @@
-.loginpageGrid {
+.loginpageLayout {
   display: flex;
-  flex-direction: column;
-  flex-flow: column wrap;
+  flex-direction: row;
   justify-content: center;
-  max-width: 600px;
   padding: 20px;
 }
 
-.adminpageGrid {
+.adminpageLayout {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 20px;
+}
+
+.userpageLayout {
   display: flex;
   flex-direction: column;
   flex-flow: column wrap;
@@ -16,12 +21,10 @@
   padding: 20px;
 }
 
-.userpageGrid {
+.menuLayout {
   display: flex;
-  flex-direction: column;
-  flex-flow: column wrap;
+  flex-direction: row;
   justify-content: space-between;
-  max-width: 600px;
   padding: 20px;
 }
 
