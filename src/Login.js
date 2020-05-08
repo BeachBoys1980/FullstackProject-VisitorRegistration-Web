@@ -37,7 +37,6 @@ class Login extends React.Component {
       username: this.state.username,
       password: this.state.password,
     };
-    console.log(process.env.REACT_APP_BACKENDAPIURL);
 
     axios
       .post(apiLoginURL, payload)
