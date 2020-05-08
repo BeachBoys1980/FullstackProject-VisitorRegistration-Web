@@ -33,7 +33,7 @@ class AdminHomepage extends React.Component {
   }
 
   handleGetAllClick = () => {
-    const apiGetAllURL = "http://localhost:5000/users/";
+    const apiGetAllURL = "/users/";
 
     axios
       .get(apiGetAllURL)
@@ -136,7 +136,7 @@ class AdminHomepage extends React.Component {
   };
 
   handleCreateUserClick = () => {
-    const apiCreateUserURL = "http://localhost:5000/users/create";
+    const apiCreateUserURL = "/users/create";
 
     const payload = {
       username: this.state.username,
@@ -162,7 +162,7 @@ class AdminHomepage extends React.Component {
   };
 
   handleLogoutClick = () => {
-    const apiLogoutURL = "http://localhost:5000/users/logout";
+    const apiLogoutURL = "/users/logout";
 
     axios
       .post(apiLogoutURL)

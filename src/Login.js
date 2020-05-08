@@ -31,7 +31,7 @@ class Login extends React.Component {
   };
 
   handleClick = () => {
-    const apiLoginURL = "http://localhost:5000/users/login";
+    const apiLoginURL = "/users/login";
 
     const payload = {
       username: this.state.username,

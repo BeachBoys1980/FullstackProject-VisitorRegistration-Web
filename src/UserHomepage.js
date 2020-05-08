@@ -32,7 +32,7 @@ class UserHomepage extends React.Component {
       isContactTraceFormDisplayed: false,
     });
 
-    const apiGetAllURL = "http://localhost:5000/visits/";
+    const apiGetAllURL = "/visits/";
 
     axios
       .get(apiGetAllURL, { withCredentials: true })
@@ -170,7 +170,7 @@ class UserHomepage extends React.Component {
   };
 
   handleRegisterVisitClick = () => {
-    const apiCreateUserURL = "http://localhost:5000/visits/register";
+    const apiCreateUserURL = "/visits/register";
 
     const payload = {
       visitDateTime: new Date(),
@@ -238,7 +238,7 @@ class UserHomepage extends React.Component {
 
   handleContactTraceClick = () => {
     // Step 1: Get all visits
-    const apiGetAllURL = "http://localhost:5000/visits/";
+    const apiGetAllURL = "/visits/";
 
     axios
       .get(apiGetAllURL)
@@ -280,7 +280,7 @@ class UserHomepage extends React.Component {
       contactTraceDay;
 
     const apiContactTraceURL =
-      "http://localhost:5000/visits/nric/" +
+      "/visits/nric/" +
       this.state.contactTraceNric +
       "/trace" +
       contactTraceDateURL;
@@ -403,7 +403,7 @@ class UserHomepage extends React.Component {
   };
 
   handleLogoutClick = () => {
-    const apiLogoutURL = "http://localhost:5000/users/logout";
+    const apiLogoutURL = "/users/logout";
 
     axios
       .post(apiLogoutURL)
